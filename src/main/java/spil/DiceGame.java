@@ -1,11 +1,21 @@
 package spil;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class DiceGame {
-    public static void newGame(Player... playerList) throws IOException {
+    Player[] players;
+
+    DiceGame() {
+        this.players = getPlayers();
+    }
+
+    public void startGame() throws IOException {
+
+
 
         //spillet kører
+
         boolean gameFinished = false;
 
         while(!gameFinished){
@@ -15,37 +25,22 @@ public class DiceGame {
 
 
 
-            //1
-
-            //2
-
-            //3
-
-            //4
-
-            //5
-
-            //6
-
-            //7
-
-            //8
-
-            //9
-
-            //10
-
-            //11
-
-            //12
-
-
-
-
-
 
         }
+    }
 
+    private Player[] getPlayers() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Indtast spiller 1");
+        String player1 = s.nextLine();
+        System.out.println("Indtast spiller 2");
+        String player2 = s.nextLine();
+
+
+        return new Player[] {
+              new Player(player1),
+              new Player(player2)
+        };
 
     }
 
