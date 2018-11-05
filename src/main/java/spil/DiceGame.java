@@ -3,13 +3,26 @@ package spil;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ *
+ * @since 1.0.1
+ */
 public class DiceGame {
     Player[] players;
 
+    /**
+     *
+     * @since 1.0.1
+     */
     DiceGame() {
         this.players = getPlayers();
     }
 
+    /**
+     *
+     * @throws IOException
+     * @since 1.0.1
+     */
     public void startGame() throws IOException {
 
 
@@ -29,6 +42,11 @@ public class DiceGame {
         }
     }
 
+    /**
+     *
+     * @return
+     * @since 1.0.1
+     */
     private Player[] getPlayers() {
         Scanner s = new Scanner(System.in);
         System.out.println("Indtast spiller 1");
