@@ -1,9 +1,13 @@
 package spil;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
+ * Used for running the application.
+ *
+ * <p>
+ *     Creates a new instance of the DiceGame-class. Starts the game by calling the startGame-method.
+ * </p>
  *
  * @author Hans, Nicklas, Rasmus, Mathias, Jeppe and Anton.
  * @version 1.0.1
