@@ -14,7 +14,7 @@ public class DiceGame {
      *
      * @since 1.0.1
      */
-    DiceGame() {
+    public DiceGame() {
         this.players = getPlayers();
     }
 
@@ -48,11 +48,10 @@ public class DiceGame {
      * @since 1.0.1
      */
     private Player[] getPlayers() {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Indtast spiller 1");
-        String player1 = s.nextLine();
-        System.out.println("Indtast spiller 2");
-        String player2 = s.nextLine();
+        View.print("Indtast spiller 1");
+        String player1 = View.readString();
+        View.print("Indtast spiller 2");
+        String player2 = View.readString();
 
 
         return new Player[] {
