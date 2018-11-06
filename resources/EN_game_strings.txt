@@ -1,0 +1,12 @@
+give_player_name
+Enter name of player %d
+player_win
+%s won the game! Congratulations!
+field_land
+You landed on field: %s
+balance
+Your balance is: %d
+cast_dice
+%s : Press enter to cast dice
+amount_players
+Enter amount of players
