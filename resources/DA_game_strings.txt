@@ -1,0 +1,6 @@
+give_player_name
+Indtast navn på spiller %d
+player_win
+Spilleren %s har vundet!
+field_land
+Du landede på feltet: %s

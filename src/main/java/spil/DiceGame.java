@@ -1,5 +1,6 @@
 package spil;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -19,11 +20,19 @@ public class DiceGame {
      */
     Field[] fields;
 
+    GameStringContainer stringContainer;
+
     /**
      * This constructor is calling the method getPlayers, which is creating the players.
      */
     public DiceGame() {
-        this.players = getPlayers();
+        try {
+            stringContainer = new GameStringContainer("resources/DA_game_strings.txt");
+        } catch (FileNotFoundException fnfException) {
+            System.out.println("Could not find strings resource");
+        }
+
+        players = getPlayers();
     }
 
     /**
@@ -45,7 +54,7 @@ public class DiceGame {
 
             diceCup.castDices();
             Field fieldLandedOn = FieldFactory.getField(diceCup.getFaceValue());
-            System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
+
 
             // Field Logic
 
@@ -57,11 +66,11 @@ public class DiceGame {
      * @return Is returning the 2 new players.
      */
     private Player[] getPlayers() {
-        View.print("Indtast spiller 1");
+        View.print(stringContainer.getString("give_player_name"), 1);
         String player1 = View.readString();
-        View.print("Indtast spiller 2");
-        String player2 = View.readString();
 
+        View.print(stringContainer.getString("give_player_name"), 2);
+        String player2 = View.readString();
 
         return new Player[] {
               new Player(player1),
