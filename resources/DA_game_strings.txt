@@ -8,3 +8,5 @@ balance
 Din balance er nu %d
 cast_dice
 %s : Tryk på enter for at kaste terningerne
+amount_players
+Indtast antallet af spillere

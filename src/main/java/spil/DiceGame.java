@@ -81,15 +81,16 @@ public class DiceGame {
      * @since 1.0.1
      */
     Player[] getPlayers() {
-        View.print(stringContainer.getString("give_player_name"), 1);
-        String player1 = View.readString();
-        View.print(stringContainer.getString("give_player_name"), 2);
-        String player2 = View.readString();
+        View.print(stringContainer.getString("amount_players"));
+        int n = View.readInt();
 
-        return new Player[] {
-              new Player(player1),
-              new Player(player2)
-        };
+        Player[] players = new Player[n];
+        for (int i = 0; i < n; i++) {
+            View.print(stringContainer.getString("give_player_name"), i+1);
+            players[i] = new Player(View.readString());
+        }
+
+        return players;
     }
 
     /**
