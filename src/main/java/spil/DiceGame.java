@@ -4,31 +4,38 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
+ * This is the core class which is starting the application.
  *
- * @since 1.0.1
+ * <p>
+ *     This class is creating the Dice Cup and the 2 players.
+ * </p>
  */
 public class DiceGame {
+    /**
+     * Is a list for the players.
+     */
     Player[] players;
+    /**
+     * Is a list of the fields.
+     */
     Field[] fields;
 
     /**
-     *
-     * @since 1.0.1
+     * This constructor is calling the method getPlayers, which is creating the players.
      */
     public DiceGame() {
         this.players = getPlayers();
     }
 
     /**
-     *
-     * @throws IOException
-     * @since 1.0.1
+     * This method is starting the application.
+     * @throws IOException Is used for...
      */
     public void startGame() throws IOException {
 
 
 
-        //spillet kører
+        //The game is running
 
         boolean gameFinished = false;
 
@@ -41,15 +48,14 @@ public class DiceGame {
             Field fieldLandedOn = FieldFactory.getField(diceCup.getTerningSum());
             System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
 
-            // Felt Logik
+            // Field Logic
 
         }
     }
 
     /**
-     *
-     * @return
-     * @since 1.0.1
+     * This method is asking the player for the 2 players names, and then creating the 2 players.
+     * @return Is returning the 2 new players.
      */
     private Player[] getPlayers() {
         View.print("Indtast spiller 1");
@@ -64,11 +70,4 @@ public class DiceGame {
         };
 
     }
-
-    /**
-     *
-     * @return
-     * @since 1.0.1
-     */
-
 }

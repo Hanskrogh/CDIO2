@@ -13,7 +13,6 @@ public class View {
 
     /**
      * Prints a message to the user.
-     *
      * @param message The string to be printed to the user.
      */
     public static void print(String message) {
@@ -22,7 +21,6 @@ public class View {
 
     /**
      * Read an integer from the user.
-     *
      * @return integer from console.
      */
     public static int readInt() {
@@ -34,7 +32,6 @@ public class View {
 
     /**
      * Read string-formatted user input.
-     *
      * @return string from console.
      */
     public static String readString() {

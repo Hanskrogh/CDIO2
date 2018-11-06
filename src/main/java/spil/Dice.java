@@ -3,8 +3,7 @@ package spil;
 import java.util.Random;
 
 /**
- *
- * @since 1.0.1
+ * This class is for creating a dice.
  */
 public class Dice {
     Random random;
@@ -14,7 +13,6 @@ public class Dice {
 
     /**
      *
-     * @since 1.0.1
      */
     public Dice() {
         this.random = new Random();
@@ -23,7 +21,6 @@ public class Dice {
     /**
      *
      * @return the value between 1 dice side.
-     * @since 1.0.1
      */
     public int cast() {
         random = new Random(random.nextInt());//tving ny random per kald
@@ -34,7 +31,6 @@ public class Dice {
     /**
      *
      * @return Returning the value of the dice side.
-     * @since 1.0.1
      */
     public int getVaule() { return vaule; }
 }
