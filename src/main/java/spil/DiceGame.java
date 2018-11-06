@@ -24,49 +24,47 @@ public class DiceGame {
      * @throws IOException
      * @since 1.0.1
      */
-    public void startGame(Player... playerList) throws IOException {
+    public void startGame() throws IOException {
 
 
 
         //spillet kører
 
         boolean gameFinished = false;
-        Account.balance = 1000;
 
         while(!gameFinished){
 
-            for (int i = 0; i<1; i++) {
+            /**
+             *  Runs the game with turns swapping between the players, until the variable "gameFinished" is true.
+             */
+            for (int i = 0; i<players.length; i++) {
                 DiceCup diceCup = new DiceCup();
-                System.out.print(players + " Tryk på enter for at kaste");
+                System.out.println("-----------------------------------------------------------");
+                System.out.print(players[i].getName() + ": Tryk på enter for at kaste terningerne");
                 System.in.read();
 
+                System.out.println();
                 diceCup.castDices();
                 Field fieldLandedOn = FieldFactory.getField(diceCup.getTerningSum());
                 System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
+                players[i].account.changeBalance(fieldLandedOn.value);
                 System.out.println();
-                Account.balance += fieldLandedOn.value;
-                System.out.println(Account.balance);
+                System.out.println("Din balance er nu på " + players[i].account.balance);
 
 
+                if (fieldLandedOn.getsAnotherTurn) {
+                    i--;
+                    continue;
+                }
 
-
-
-                // Felt Logik
+                if (players[i].account.balance >= 3000) {
+                    gameFinished = true;
+                    System.out.println(players[i].getName() + " vandt spillet! Tillykke!");
+                    break;
+                }
+                    // stod kode her
             }
-            for (int i = 0; i<1; i++) {
-                DiceCup diceCup = new DiceCup();
-                System.out.print("Player 2: Tryk på enter for at kaste");
-                System.in.read();
 
-                diceCup.castDices();
-                Field fieldLandedOn = FieldFactory.getField(diceCup.getTerningSum());
-                System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
-                System.out.println();
-                Account.balance += fieldLandedOn.value;
-                System.out.println(Account.balance);
-
-                // Felt Logik
-            }
         }
     }
 
