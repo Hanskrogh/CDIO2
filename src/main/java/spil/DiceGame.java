@@ -44,8 +44,8 @@ public class DiceGame {
              */
             for (int i = 0; i<players.length; i++) {
                 DiceCup diceCup = new DiceCup();
-                System.out.println("-----------------------------------------------------------");
-                System.out.print(players[i].getName() + ": Tryk på enter for at kaste terningerne");
+                View.print("-----------------------------------------------------------");
+                View.print(stringContainer.getString("cast_dice"), players[i].getName());
                 System.in.read();
 
                 System.out.println();

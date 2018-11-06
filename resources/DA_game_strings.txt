@@ -6,3 +6,5 @@ field_land
 Du landede på feltet: %s
 balance
 Din balance er nu %d
+cast_dice
+%s : Tryk på enter for at kaste terningerne
