@@ -102,7 +102,10 @@ public class DiceGame {
      */
     Player[] getPlayers() {
         View.print(stringContainer.getString("amount_players"));
-        int n = View.readInt();
+        int n;
+        while ((n = View.readInt()) <= 0) {
+            View.print(stringContainer.getString("invalid_amount_players"));
+        }
 
         Player[] players = new Player[n];
         for (int i = 0; i < n; i++) {

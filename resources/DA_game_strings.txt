@@ -16,8 +16,8 @@ cast_dice
 amount_players
 Indtast antallet af spillere
 
-
-
+invalid_amount_players
+Ugyldigt antal spillere! Prøv igen!
 
 
 field_tower

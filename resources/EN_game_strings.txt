@@ -16,9 +16,8 @@ cast_dice
 amount_players
 Enter amount of players
 
-
-
-
+invalid_amount_players
+Invalid amount of players! Try again!
 
 field_tower
 You have found the tower and the treasures inside it! You get 250!
