@@ -69,8 +69,8 @@ public class DiceGame {
                 System.in.read();
 
                 System.out.println();
-                diceCup.castDices();
-                Field fieldLandedOn = fieldFactory.getField(diceCup.getFaceValue());
+                diceCup.castDice();
+                Field fieldLandedOn = fieldFactory.getField(diceCup.getDiceSum());
 
                 View.print(stringContainer.getString("field_land"), fieldLandedOn.name);
                 View.print(fieldLandedOn.fieldText);
