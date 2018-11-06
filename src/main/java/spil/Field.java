@@ -35,10 +35,7 @@ public class Field {
      * @param fieldText The description of the field.
      */
     Field(String name, int value, String fieldText) {
-        this.name = name;
-        this.value = value;
-        this.fieldText = fieldText;
-        getsAnotherTurn = false;
+        this(name, value, fieldText, false);
     }
 
     /**
