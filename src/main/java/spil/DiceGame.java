@@ -16,17 +16,37 @@ public class DiceGame {
      * Defines GameStringContainer as stringContainer.
      */
     GameStringContainer stringContainer;
+    FieldFactory fieldFactory;
 
     /**
      * This method is creating a new GameStringContainer with a file path and calls the method getPlayers.
      */
     public DiceGame() {
+        View.print("Press 1 for english");
+        View.print("Tryk 2 for dansk");
+
+        int i = 0;
+        while (true) {
+            i = View.readInt();
+            if (i >= 1 && i <= 2) {
+                break;
+            }
+            System.out.println("Invalid Input! Try again.");
+        }
+
+        String language = "";
+        switch (i) {
+            case 1: language = "EN"; break;
+            case 2: language = "DA"; break;
+        }
+
         try {
-            stringContainer = new GameStringContainer("resources/EN_game_strings.txt");
+            stringContainer = new GameStringContainer(String.format("resources/%s_game_strings.txt", language));
         } catch (FileNotFoundException fnfException) {
             System.out.println("Kunne ikke finde DA_game_strings.txt filen under resourcer.");
         }
 
+        fieldFactory = new FieldFactory(stringContainer);
         this.players = getPlayers();
     }
 
@@ -52,15 +72,15 @@ public class DiceGame {
             //Runs the game with turns swapping between the players, until the variable "gameFinished" is true.
             for (int i = 0; i<players.length; i++) {
                 DiceCup diceCup = new DiceCup();
-                View.print("-----------------------------------------------------------");
+                View.print("-------------------------------------------------------------------------------------------------------------------------");
                 View.print(stringContainer.getString("cast_dice"), players[i].getName());
                 System.in.read();
 
                 System.out.println();
                 diceCup.castDices();
-                Field fieldLandedOn = FieldFactory.getField(diceCup.getFaceValue());
+                Field fieldLandedOn = fieldFactory.getField(diceCup.getFaceValue());
 
-                View.print(stringContainer.getString("field_land"));
+                View.print(stringContainer.getString("field_land"), fieldLandedOn.name);
                 View.print(fieldLandedOn.fieldText);
 
                 players[i].account.changeBalance(fieldLandedOn.value);
@@ -89,7 +109,10 @@ public class DiceGame {
      */
     Player[] getPlayers() {
         View.print(stringContainer.getString("amount_players"));
-        int n = View.readInt();
+        int n;
+        while ((n = View.readInt()) <= 0) {
+            View.print(stringContainer.getString("invalid_amount_players"));
+        }
 
         Player[] players = new Player[n];
         for (int i = 0; i < n; i++) {

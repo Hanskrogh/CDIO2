@@ -60,9 +60,13 @@ public class GameStringContainer {
         int lineCount = 0;
         String key = "";
         while (s.hasNext()) {
-            if (lineCount % 2 == 0) { key = s.nextLine(); }
+            String line = s.nextLine();
+
+            if (line.equals("")) continue;
+
+            if (lineCount % 2 == 0) { key = line; }
             else {
-                gameStrings.put(key, s.nextLine());
+                gameStrings.put(key, line);
             }
             lineCount++;
         }
