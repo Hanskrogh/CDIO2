@@ -6,7 +6,7 @@ package spil;
  */
 public class Player {
     private String name;
-    private int point;
+    private int money;
 
     /**
      *
@@ -15,6 +15,7 @@ public class Player {
      */
     public Player(String name){
         this.name = name;
+        new Account();
     }
 
     /**
@@ -22,26 +23,16 @@ public class Player {
      * @return
      * @since 1.0.1
      */
-    public int getPoint(){
-        return point;
+    public int getMoney(){
+        return money;
     }
 
     /**
      *
-     * @param point
+     * @param money
      * @since 1.0.1
      */
-    public void addPoint(int point) {
-        this.point += point;
-    }
-
-    /**
-     *
-     * @param point
-     * @since 1.0.1
-     */
-    public void setPoint(int point) {
-        this.point = point;
+    public void setMoney(int money) {
     }
 
     /**

@@ -24,7 +24,7 @@ public class DiceGame {
      * @throws IOException
      * @since 1.0.1
      */
-    public void startGame() throws IOException {
+    public void startGame(Player... playerList) throws IOException {
 
 
 
@@ -34,15 +34,30 @@ public class DiceGame {
 
         while(!gameFinished){
 
+            for (int i = 0; i<1; i++) {
+                DiceCup diceCup = new DiceCup();
+                System.out.print("Player 1: Tryk på enter for at kaste");
+                System.in.read();
 
-            DiceCup diceCup = new DiceCup();
+                diceCup.castDices();
+                Field fieldLandedOn = FieldFactory.getField(diceCup.getTerningSum());
+                System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
+                System.out.println();
 
-            diceCup.castDices();
-            Field fieldLandedOn = FieldFactory.getField(diceCup.getTerningSum());
-            System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
+                // Felt Logik
+            }
+            for (int i = 0; i<1; i++) {
+                DiceCup diceCup = new DiceCup();
+                System.out.print("Player 2: Tryk på enter for at kaste");
+                System.in.read();
 
-            // Felt Logik
+                diceCup.castDices();
+                Field fieldLandedOn = FieldFactory.getField(diceCup.getTerningSum());
+                System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
+                System.out.println();
 
+                // Felt Logik
+            }
         }
     }
 
