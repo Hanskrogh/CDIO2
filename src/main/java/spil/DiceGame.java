@@ -1,7 +1,6 @@
 package spil;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  * This is the core class which is starting the application.
@@ -45,7 +44,7 @@ public class DiceGame {
             DiceCup diceCup = new DiceCup();
 
             diceCup.castDices();
-            Field fieldLandedOn = FieldFactory.getField(diceCup.getTerningSum());
+            Field fieldLandedOn = FieldFactory.getField(diceCup.getFaceValue());
             System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
 
             // Field Logic

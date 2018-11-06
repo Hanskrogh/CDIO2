@@ -38,7 +38,7 @@ public class DiceCup {
      * This method is for seeing the total value of the 2 dices.
      * @return The value of both dices in a total sum.
      */
-    public int getTerningSum() {
+    public int getFaceValue() {
         int sum = 0;
         for (int i = 0; i < dices.length; i++) { sum += dices[i].getVaule(); }
         return sum;
@@ -48,7 +48,7 @@ public class DiceCup {
      * This method is for checking if the dices has the same value.
      * @return Is returning true if the dices value are the same.
      */
-    public boolean erEns() {
+    public boolean isEqual() {
         for (int i = 0; i < dices.length; i++) {
             for (int j = 0; j < dices.length; j++) {
                 if (dices[i] != dices[j]) return false;
