@@ -52,6 +52,6 @@ public class FieldFactory {
                 return new Field("Goldmine", 650, stringContainer.getString("field_goldmine"));
 
         }
-        throw new IllegalArgumentException("Programfejl: Umuligt antal øjne");
+        throw new IllegalArgumentException(stringContainer.getString("error_invalid_face_value"));
     }
 }
