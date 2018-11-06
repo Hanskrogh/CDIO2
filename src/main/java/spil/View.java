@@ -19,6 +19,10 @@ public class View {
         System.out.println(message);
     }
 
+    public static void print(String message, Object... args) {
+        System.out.printf(message + "\n", args);
+    }
+
     /**
      * Read an integer from the user.
      * @return integer from console.
