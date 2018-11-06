@@ -34,7 +34,7 @@ public class Field {
      * @param value The value of the field.
      * @param fieldText The description of the field.
      */
-    Field(String name, int value, String fieldText) {
+    public Field(String name, int value, String fieldText) {
         this.name = name;
         this.value = value;
         this.fieldText = fieldText;
@@ -48,7 +48,7 @@ public class Field {
      * @param fieldText The description of the field.
      * @param getsAnotherTurn The variable that decides if the player is getting another turn.
      */
-    Field(String name, int value, String fieldText, boolean getsAnotherTurn) {
+    public Field(String name, int value, String fieldText, boolean getsAnotherTurn) {
         this.name = name;
         this.value = value;
         this.fieldText = fieldText;

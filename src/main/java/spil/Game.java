@@ -16,8 +16,8 @@ public class Game {
 
     /**
      * This method is for running the application.
-     * @param args Something you need in order to run the application.
-     * @throws IOException Is used for...
+     * @param args Is a string of arguments for running the code (Our code is not using any arguments).
+     * @throws IOException This is an exception that might be thrown when attempting to read a line using Scanner. The IO exception will only be thrown in case an invalid stream is getting input (other than System.in)
      */
     public static void main(String[] args) throws IOException  {
         DiceGame diceGame = new DiceGame();

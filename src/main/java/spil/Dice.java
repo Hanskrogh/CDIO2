@@ -6,13 +6,7 @@ import java.util.Random;
  * This class is for creating a dice.
  */
 public class Dice {
-    /**
-     * We are defining Random as random.
-     */
     Random random;
-    /**
-     * Defines the value.
-     */
     int value = 1;
     /**
      * Defines the sides for the die with a final static so it can't be changed.
@@ -40,5 +34,5 @@ public class Dice {
      * This method is used for seeing the current value of the die.
      * @return Returning the value of the dice side.
      */
-    public int getVaule() { return value; }
+    public int getValue() { return value; }
 }

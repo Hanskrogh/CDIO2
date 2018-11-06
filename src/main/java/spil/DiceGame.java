@@ -2,19 +2,12 @@ package spil;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  * This is the class that starts the application.
  */
 public class DiceGame {
-    /**
-     * Is a list that holds all the players.
-     */
     Player[] players;
-    /**
-     * Defines GameStringContainer as stringContainer.
-     */
     GameStringContainer stringContainer;
 
     /**
@@ -35,11 +28,13 @@ public class DiceGame {
      *
      * <p>
      *     The method is running the application with turns.
+     * </p><p>
      *     That means that one player is playing at a time.
+     * </P><p>
      *     This method is also printing out the information for the player with the class view.
      * </p>
      *
-     * @throws IOException Is used for...
+     * @throws IOException This is an exception that might be thrown when attempting to read a line using Scanner. The IO exception will only be thrown in case an invalid stream is getting input (other than System.in)
      */
     public void startGame() throws IOException {
 
@@ -87,7 +82,7 @@ public class DiceGame {
      * This method is used for getting the players names.
      * @return Returning the players names.
      */
-    Player[] getPlayers() {
+    public Player[] getPlayers() {
         View.print(stringContainer.getString("amount_players"));
         int n = View.readInt();
 

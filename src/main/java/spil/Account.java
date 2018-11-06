@@ -17,7 +17,7 @@ public class Account {
      * </p>
      * @param balance Is a specific value to set the balance to.
      */
-    Account(int balance) {
+    public Account(int balance) {
         if(balance <0) this.balance=0;
         this.balance = balance;
     }

@@ -1,14 +1,9 @@
 package spil;
 
-import java.util.Random;
-
 /**
  * This class is creating and controlling the dices.
  */
 public class DiceCup {
-    /**
-     * Is a final list that holds the dices.
-     */
     private final Dice[] dices;
 
     /**
@@ -40,7 +35,7 @@ public class DiceCup {
      */
     public int getFaceValue() {
         int sum = 0;
-        for (int i = 0; i < dices.length; i++) { sum += dices[i].getVaule(); }
+        for (int i = 0; i < dices.length; i++) { sum += dices[i].getValue(); }
         return sum;
     }
 

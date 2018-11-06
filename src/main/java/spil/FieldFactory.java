@@ -1,15 +1,11 @@
 package spil;
 
-import sun.font.TrueTypeFont;
-
 /**
  * This class is creating the different fields.
  *
  * <p>
  *     Field Factory is creating the fields when a player has rolled the dices, and then returns the values to the Field class.
  * </p>
- *
- * Field Factory  ... lave felterne ... og give værdier... videre til Field.
  *
  */
 public class FieldFactory {

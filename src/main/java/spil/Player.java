@@ -4,13 +4,7 @@ package spil;
  * This class is for creating the players.
  */
 public class Player {
-    /**
-     * Defines the name of the player.
-     */
     private String name;
-    /**
-     * Defines the Account as account.
-     */
     Account account;
 
     /**
