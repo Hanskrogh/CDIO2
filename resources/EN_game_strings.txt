@@ -10,3 +10,27 @@ cast_dice
 %s : Press enter to cast dice
 amount_players
 Enter amount of players
+
+
+field_tower
+You have found the tower and the treasures inside it! You get 250!
+field_crater
+You've fallen into a crater and lose 100.
+field_palace_gates
+You arrive at the palace and the king gives you 100.
+field_cold_desert
+You had to spend the night in the cold desert and were robbed in your sleep. You lose 20.
+field_walled_city
+You found the walled city! You get 100
+field_monastary
+You spent the day at the monastary. You gained and lost nothing. You did waste an entire day though.
+field_black_cave
+You find yourself in a dark cave and accidentally drop 70. You can't find them. They're lost.
+field_huts_in_the_mountain
+You found some small huts on a mountain. You get 60!
+field_the_werewall
+You arrived at the werewolf wall, but were chased away by werewolves. You dropped 80. Fortunately, you get another turn.
+field_the_pit
+You almost fell into a pit, but managed to dodge it at the last second. Your wallet was not as lucky. You lose 50.
+field_goldmine
+While exploring an old mine, you spot something shining in the corner of your eye. You pick it up and realise its a massive gold lump. You gain 650! You're rich!

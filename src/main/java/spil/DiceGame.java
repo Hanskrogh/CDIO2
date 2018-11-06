@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class DiceGame {
     Player[] players;
     GameStringContainer stringContainer;
+    FieldFactory fieldFactory;
 
     /**
      *
@@ -23,6 +24,7 @@ public class DiceGame {
             System.out.println("Kunne ikke finde DA_game_strings.txt filen under resourcer.");
         }
 
+        fieldFactory = new FieldFactory(stringContainer);
         this.players = getPlayers();
     }
 
@@ -50,7 +52,7 @@ public class DiceGame {
 
                 System.out.println();
                 diceCup.castDices();
-                Field fieldLandedOn = FieldFactory.getField(diceCup.getFaceValue());
+                Field fieldLandedOn = fieldFactory.getField(diceCup.getFaceValue());
 
                 View.print(stringContainer.getString("field_land"));
                 View.print(fieldLandedOn.fieldText);
