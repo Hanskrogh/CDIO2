@@ -18,8 +18,26 @@ public class DiceGame {
      * @since 1.0.1
      */
     public DiceGame() {
+        View.print("Press 1 for english");
+        View.print("Tryk 2 for dansk");
+
+        int i = 0;
+        while (true) {
+            i = View.readInt();
+            if (i >= 1 && i <= 2) {
+                break;
+            }
+            System.out.println("Invalid Input! Try again.");
+        }
+
+        String language = "";
+        switch (i) {
+            case 1: language = "EN"; break;
+            case 2: language = "DA"; break;
+        }
+
         try {
-            stringContainer = new GameStringContainer("resources/EN_game_strings.txt");
+            stringContainer = new GameStringContainer(String.format("resources/%s_game_strings.txt", language));
         } catch (FileNotFoundException fnfException) {
             System.out.println("Kunne ikke finde DA_game_strings.txt filen under resourcer.");
         }
@@ -46,7 +64,7 @@ public class DiceGame {
              */
             for (int i = 0; i<players.length; i++) {
                 DiceCup diceCup = new DiceCup();
-                View.print("-----------------------------------------------------------");
+                View.print("-------------------------------------------------------------------------------------------------------------------------");
                 View.print(stringContainer.getString("cast_dice"), players[i].getName());
                 System.in.read();
 
@@ -54,7 +72,7 @@ public class DiceGame {
                 diceCup.castDices();
                 Field fieldLandedOn = fieldFactory.getField(diceCup.getFaceValue());
 
-                View.print(stringContainer.getString("field_land"));
+                View.print(stringContainer.getString("field_land"), fieldLandedOn.name);
                 View.print(fieldLandedOn.fieldText);
 
                 players[i].account.changeBalance(fieldLandedOn.value);
