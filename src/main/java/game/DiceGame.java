@@ -1,8 +1,7 @@
-package spil;
+package game;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  * This is the class that starts the application.
@@ -73,7 +72,7 @@ public class DiceGame {
             for (int i = 0; i<players.length; i++) {
                 DiceCup diceCup = new DiceCup();
                 View.print("-------------------------------------------------------------------------------------------------------------------------");
-                View.print(stringContainer.getString("cast_dice"), players[i].getName());
+                View.print(stringContainer.getString("roll_dice"), players[i].getName());
                 System.in.read();
 
                 System.out.println();

@@ -1,4 +1,4 @@
-package spil;
+package game;
 
 /**
  * This class is for creating the players.

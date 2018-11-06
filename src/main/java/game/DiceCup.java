@@ -1,6 +1,4 @@
-package spil;
-
-import java.util.Random;
+package game;
 
 /**
  * This class is creating and controlling the dices.
@@ -28,7 +26,7 @@ public class DiceCup {
         // We are here rolling the dices.
         for (int i = 0; i < dices.length; i++) {
             Dice dice = dices[i];
-            cast[i] = dice.cast();
+            cast[i] = dice.roll();
         }
 
         return cast;
@@ -40,7 +38,7 @@ public class DiceCup {
      */
     public int getFaceValue() {
         int sum = 0;
-        for (int i = 0; i < dices.length; i++) { sum += dices[i].getVaule(); }
+        for (int i = 0; i < dices.length; i++) { sum += dices[i].getValue(); }
         return sum;
     }
 

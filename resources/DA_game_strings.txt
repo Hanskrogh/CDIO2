@@ -10,7 +10,7 @@ Du landede på feltet: %s
 balance
 Din balance er nu %d
 
-cast_dice
+roll_dice
 %s : Tryk på enter for at kaste terningerne
 
 amount_players

@@ -10,7 +10,7 @@ You landed on field: %s
 balance
 Your balance is: %d
 
-cast_dice
+roll_dice
 %s : Press enter to cast dice
 
 amount_players

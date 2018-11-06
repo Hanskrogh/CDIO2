@@ -1,8 +1,4 @@
-package spil;
-
-import sun.font.TrueTypeFont;
-
-import java.io.FileNotFoundException;
+package game;
 
 /**
  * This class is creating the different fields.

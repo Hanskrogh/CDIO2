@@ -1,9 +1,8 @@
-package spil;
+package game;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Dictionary;
-import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Scanner;
 

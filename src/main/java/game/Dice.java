@@ -1,4 +1,4 @@
-package spil;
+package game;
 
 import java.util.Random;
 
@@ -30,8 +30,8 @@ public class Dice {
      * This method is used for rolling the die.
      * @return the value of the random roll.
      */
-    public int cast() {
-        random = new Random(random.nextInt());//tving ny random per kald
+    public int roll() {
+        random = new Random(random.nextInt());
         value = random.nextInt(DiceSides)+1;
         return value;
     }
@@ -40,5 +40,5 @@ public class Dice {
      * This method is used for seeing the current value of the die.
      * @return Returning the value of the dice side.
      */
-    public int getVaule() { return value; }
+    public int getValue() { return value; }
 }

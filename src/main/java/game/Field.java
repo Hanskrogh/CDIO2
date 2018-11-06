@@ -1,4 +1,4 @@
-package spil;
+package game;
 
 /**
  * This class is controlling each field.
