@@ -1,6 +1,8 @@
 give_player_name
 Indtast navn på spiller %d
 player_win
-Spilleren %s har vundet!
+%s vandt spillet! Tillykke!
 field_land
 Du landede på feltet: %s
+balance
+Din balance er nu %d

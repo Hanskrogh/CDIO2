@@ -1,5 +1,6 @@
 package spil;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -9,13 +10,19 @@ import java.util.Scanner;
  */
 public class DiceGame {
     Player[] players;
-    Field[] fields;
+    GameStringContainer stringContainer;
 
     /**
      *
      * @since 1.0.1
      */
     public DiceGame() {
+        try {
+            stringContainer = new GameStringContainer("resources/DA_game_strings.txt");
+        } catch (FileNotFoundException fnfException) {
+            System.out.println("Kunne ikke finde DA_game_strings.txt filen under resourcer.");
+        }
+
         this.players = getPlayers();
     }
 
@@ -25,8 +32,6 @@ public class DiceGame {
      * @since 1.0.1
      */
     public void startGame() throws IOException {
-
-
 
         //spillet kører
 
@@ -45,12 +50,15 @@ public class DiceGame {
 
                 System.out.println();
                 diceCup.castDices();
-                Field fieldLandedOn = FieldFactory.getField(diceCup.getTerningSum());
-                System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
-                players[i].account.changeBalance(fieldLandedOn.value);
-                System.out.println();
-                System.out.println("Din balance er nu på " + players[i].account.balance);
+                Field fieldLandedOn = FieldFactory.getField(diceCup.getFaceValue());
 
+                View.print(stringContainer.getString("field_land"));
+                View.print(fieldLandedOn.fieldText);
+
+                players[i].account.changeBalance(fieldLandedOn.value);
+
+                View.print("");
+                View.print(stringContainer.getString("balance"), players[i].account.balance);
 
                 if (fieldLandedOn.getsAnotherTurn) {
                     i--;
@@ -59,10 +67,9 @@ public class DiceGame {
 
                 if (players[i].account.balance >= 3000) {
                     gameFinished = true;
-                    System.out.println(players[i].getName() + " vandt spillet! Tillykke!");
+                    View.print(stringContainer.getString("player_win"), players[i].getName());
                     break;
                 }
-                    // stod kode her
             }
 
         }
@@ -73,18 +80,16 @@ public class DiceGame {
      * @return
      * @since 1.0.1
      */
-    static Player[] getPlayers() {
-        View.print("Indtast spiller 1");
+    Player[] getPlayers() {
+        View.print(stringContainer.getString("give_player_name"), 1);
         String player1 = View.readString();
-        View.print("Indtast spiller 2");
+        View.print(stringContainer.getString("give_player_name"), 2);
         String player2 = View.readString();
-
 
         return new Player[] {
               new Player(player1),
               new Player(player2)
         };
-
     }
 
     /**
