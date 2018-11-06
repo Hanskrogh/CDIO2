@@ -7,17 +7,50 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Scanner;
 
+/**
+ * This class is used for defining which language to play the game in.
+ *
+ * <p>
+ *     The application can be used in 2 languages:
+ *      - English
+ *      - Danish
+ * </p>
+ *
+ */
 public class GameStringContainer {
+    /**
+     *
+     */
     Dictionary<String, String> gameStrings;
 
+    /**
+     * This constructor is used for calling the method parseFile
+     *
+     * <p>
+     *
+     * </p>
+     *
+     * @param filePath Is the path of where the file is located.
+     * @throws FileNotFoundException Is for if the program can't find the file.
+     */
     GameStringContainer(String filePath) throws FileNotFoundException {
         parseFile(filePath);
     }
 
+    /**
+     *
+     * @param key Is used for...
+     * @return Returning ...
+     */
     public String getString(String key) {
         return gameStrings.get(key);
     }
 
+    /**
+     *
+     * @param path Is the path of where the file is located.
+     * @throws FileNotFoundException Is for if the program can't find the file.
+     */
     private void parseFile(String path) throws FileNotFoundException {
         gameStrings = new Hashtable<String, String>();
 

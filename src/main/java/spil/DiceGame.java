@@ -5,16 +5,20 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- *
- * @since 1.0.1
+ * This is the class that starts the application.
  */
 public class DiceGame {
+    /**
+     * Is a list that holds all the players.
+     */
     Player[] players;
+    /**
+     * Defines GameStringContainer as stringContainer.
+     */
     GameStringContainer stringContainer;
 
     /**
-     *
-     * @since 1.0.1
+     * This method is creating a new GameStringContainer with a file path and calls the method getPlayers.
      */
     public DiceGame() {
         try {
@@ -27,21 +31,25 @@ public class DiceGame {
     }
 
     /**
+     * This method is for starting the game.
      *
-     * @throws IOException
-     * @since 1.0.1
+     * <p>
+     *     The method is running the application with turns.
+     *     That means that one player is playing at a time.
+     *     This method is also printing out the information for the player with the class view.
+     * </p>
+     *
+     * @throws IOException Is used for...
      */
     public void startGame() throws IOException {
 
-        //spillet kører
+        //Game is running
 
         boolean gameFinished = false;
 
         while(!gameFinished){
 
-            /**
-             *  Runs the game with turns swapping between the players, until the variable "gameFinished" is true.
-             */
+            //Runs the game with turns swapping between the players, until the variable "gameFinished" is true.
             for (int i = 0; i<players.length; i++) {
                 DiceCup diceCup = new DiceCup();
                 View.print("-----------------------------------------------------------");
@@ -76,9 +84,8 @@ public class DiceGame {
     }
 
     /**
-     *
-     * @return
-     * @since 1.0.1
+     * This method is used for getting the players names.
+     * @return Returning the players names.
      */
     Player[] getPlayers() {
         View.print(stringContainer.getString("amount_players"));
@@ -92,11 +99,4 @@ public class DiceGame {
 
         return players;
     }
-
-    /**
-     *
-     * @return
-     * @since 1.0.1
-     */
-
 }
