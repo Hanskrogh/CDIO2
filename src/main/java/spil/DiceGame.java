@@ -31,18 +31,25 @@ public class DiceGame {
         //spillet kører
 
         boolean gameFinished = false;
+        Account.balance = 1000;
 
         while(!gameFinished){
 
             for (int i = 0; i<1; i++) {
                 DiceCup diceCup = new DiceCup();
-                System.out.print("Player 1: Tryk på enter for at kaste");
+                System.out.print(players + " Tryk på enter for at kaste");
                 System.in.read();
 
                 diceCup.castDices();
                 Field fieldLandedOn = FieldFactory.getField(diceCup.getTerningSum());
                 System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
                 System.out.println();
+                Account.balance += fieldLandedOn.value;
+                System.out.println(Account.balance);
+
+
+
+
 
                 // Felt Logik
             }
@@ -55,6 +62,8 @@ public class DiceGame {
                 Field fieldLandedOn = FieldFactory.getField(diceCup.getTerningSum());
                 System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
                 System.out.println();
+                Account.balance += fieldLandedOn.value;
+                System.out.println(Account.balance);
 
                 // Felt Logik
             }
@@ -66,7 +75,7 @@ public class DiceGame {
      * @return
      * @since 1.0.1
      */
-    private Player[] getPlayers() {
+    static Player[] getPlayers() {
         View.print("Indtast spiller 1");
         String player1 = View.readString();
         View.print("Indtast spiller 2");

@@ -7,6 +7,7 @@ package spil;
 public class Player {
     private String name;
     private int money;
+    Account account;
 
     /**
      *
@@ -15,7 +16,7 @@ public class Player {
      */
     public Player(String name){
         this.name = name;
-        new Account();
+        account = new Account(1000);
     }
 
     /**
@@ -23,8 +24,8 @@ public class Player {
      * @return
      * @since 1.0.1
      */
-    public int getMoney(){
-        return money;
+    public int getMoney() {
+        Account.balance += fieldLandedOn.value;
     }
 
     /**
