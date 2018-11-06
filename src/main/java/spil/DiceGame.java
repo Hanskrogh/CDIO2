@@ -18,7 +18,7 @@ public class DiceGame {
      */
     public DiceGame() {
         try {
-            stringContainer = new GameStringContainer("resources/DA_game_strings.txt");
+            stringContainer = new GameStringContainer("resources/EN_game_strings.txt");
         } catch (FileNotFoundException fnfException) {
             System.out.println("Kunne ikke finde DA_game_strings.txt filen under resourcer.");
         }
