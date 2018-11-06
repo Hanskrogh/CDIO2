@@ -3,9 +3,21 @@ package spil;
 import sun.font.TrueTypeFont;
 
 /**
+ * This class is creating the different fields.
+ *
+ * <p>
+ *     Field Factory is creating the fields when a player has rolled the dices, and then returns the values to the Field class.
+ * </p>
+ *
  * Field Factory  ... lave felterne ... og give værdier... videre til Field.
+ *
  */
 public class FieldFactory {
+    /**
+     * This method is creating a new field each time a player rolls the dices.
+     * @param Sum Is used for which field needs to generated.
+     * @return Is returning the specified field number.
+     */
     public static Field getField(int Sum) {
         switch (Sum) {
             case 2:

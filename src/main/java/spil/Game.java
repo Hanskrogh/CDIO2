@@ -15,10 +15,9 @@ import java.io.IOException;
 public class Game {
 
     /**
-     *
-     * @param args
-     * @throws IOException
-     * @since 1.0.1
+     * This method is for running the application.
+     * @param args Something you need in order to run the application.
+     * @throws IOException Is used for...
      */
     public static void main(String[] args) throws IOException  {
         DiceGame diceGame = new DiceGame();
