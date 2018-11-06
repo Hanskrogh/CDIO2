@@ -1,37 +1,55 @@
 give_player_name
 Indtast navn på spiller %d
+
 player_win
 %s vandt spillet! Tillykke!
+
 field_land
 Du landede på feltet: %s
+
 balance
 Din balance er nu %d
+
 cast_dice
 %s : Tryk på enter for at kaste terningerne
+
 amount_players
 Indtast antallet af spillere
 
 
+
+
+
 field_tower
 Du har fundet tårne, og finder gamle skatte. Du får 250!
+
 field_crater
 Du faldt ned i et krater og mistede 100
+
 field_palace_gates
 Du kom til paladset og kongen giver dig 100!
+
 field_cold_desert
 Du blev nødt til at overnatte i den kolde ørken og blev røvet i din søvn. Du mister 20.
+
 field_walled_city
 Du fandt walled city! Du får 100
+
 field_monastary
 Du kom til monastary og fik ingenting
+
 field_black_cave
 Du befidner dig i en mørk grotte og kommer til at tabe 70. Du kan ikke finde dem igen. De er væk.
+
 field_huts_in_the_mountain
 Du fandt nogle små hytter på et bjerg. Du får 60!
+
 field_the_werewall
 Du ankom til vareulvemuren og blev jagtet væk af vareulve. Du tabte 80. Heldigvis får du en ekstra tur.
+
 field_the_pit
 Du faldt næsten ned i et pit, men undgik faldet i sidste sekund. Din pung var ikke så heldig. Du mister 50.
+
 field_goldmine
 Mens du udforsker en gammelgrotte, ser du noget skinne i hjørnet af dit øje. Du går hen og samler det op, og indser at det er en massiv guldklump. Du får 650! Du er rig!
 
