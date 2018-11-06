@@ -21,7 +21,7 @@ public class FieldFactory {
     public static Field getField(int Sum) {
         switch (Sum) {
             case 2:
-                return new Field("Tower", 250, "Du har fundet tårne, og finder gamle skatte. Du får 250 !", false);
+                return new Field("Tower", 250, "Du har fundet tårne, og finder gamle skatte. Du får 250 !");
             case 3:
                 return new Field("Crater", -100, "Du faldt ned i et krater og mistede 100");
             case 4:

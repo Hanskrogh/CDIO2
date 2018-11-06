@@ -1,76 +1,84 @@
 package spil;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
- * This is the core class which is starting the application.
  *
- * <p>
- *     This class is creating the Dice Cup and the 2 players.
- * </p>
+ * @since 1.0.1
  */
 public class DiceGame {
-    /**
-     * Is a list for the players.
-     */
     Player[] players;
-    /**
-     * Is a list of the fields.
-     */
     Field[] fields;
 
-    GameStringContainer stringContainer;
-
     /**
-     * This constructor is calling the method getPlayers, which is creating the players.
+     *
+     * @since 1.0.1
      */
     public DiceGame() {
-        try {
-            stringContainer = new GameStringContainer("resources/DA_game_strings.txt");
-        } catch (FileNotFoundException fnfException) {
-            System.out.println("Could not find strings resource");
-        }
-
-        players = getPlayers();
+        this.players = getPlayers();
     }
 
     /**
-     * This method is starting the application.
-     * @throws IOException Is used for...
+     *
+     * @throws IOException
+     * @since 1.0.1
      */
     public void startGame() throws IOException {
 
 
 
-        //The game is running
+        //spillet kører
 
         boolean gameFinished = false;
 
         while(!gameFinished){
 
+            /**
+             *  Runs the game with turns swapping between the players, until the variable "gameFinished" is true.
+             */
+            for (int i = 0; i<players.length; i++) {
+                DiceCup diceCup = new DiceCup();
+                System.out.println("-----------------------------------------------------------");
+                System.out.print(players[i].getName() + ": Tryk på enter for at kaste terningerne");
+                System.in.read();
 
-            DiceCup diceCup = new DiceCup();
+                System.out.println();
+                diceCup.castDices();
+                Field fieldLandedOn = FieldFactory.getField(diceCup.getTerningSum());
+                System.out.printf("Du landede på felt: %s\n%s\n", fieldLandedOn.name, fieldLandedOn.fieldText);
+                players[i].account.changeBalance(fieldLandedOn.value);
+                System.out.println();
+                System.out.println("Din balance er nu på " + players[i].account.balance);
 
-            diceCup.castDices();
-            Field fieldLandedOn = FieldFactory.getField(diceCup.getFaceValue());
 
+                if (fieldLandedOn.getsAnotherTurn) {
+                    i--;
+                    continue;
+                }
 
-            // Field Logic
+                if (players[i].account.balance >= 3000) {
+                    gameFinished = true;
+                    System.out.println(players[i].getName() + " vandt spillet! Tillykke!");
+                    break;
+                }
+                    // stod kode her
+            }
 
         }
     }
 
     /**
-     * This method is asking the player for the 2 players names, and then creating the 2 players.
-     * @return Is returning the 2 new players.
+     *
+     * @return
+     * @since 1.0.1
      */
-    private Player[] getPlayers() {
-        View.print(stringContainer.getString("give_player_name"), 1);
+    static Player[] getPlayers() {
+        View.print("Indtast spiller 1");
         String player1 = View.readString();
-
-        View.print(stringContainer.getString("give_player_name"), 2);
+        View.print("Indtast spiller 2");
         String player2 = View.readString();
+
 
         return new Player[] {
               new Player(player1),
@@ -78,4 +86,11 @@ public class DiceGame {
         };
 
     }
+
+    /**
+     *
+     * @return
+     * @since 1.0.1
+     */
+
 }
