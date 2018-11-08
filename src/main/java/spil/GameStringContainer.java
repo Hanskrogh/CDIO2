@@ -21,12 +21,7 @@ public class GameStringContainer {
     Dictionary<String, String> gameStrings;
 
     /**
-     * This constructor is used for calling the method parseFile
-     *
-     * <p>
-     *
-     * </p>
-     *
+     * This constructor is used for calling the method parseFile.
      * @param filePath Is the path of where the file is located.
      * @throws FileNotFoundException Is for if the program can't find the file.
      */
@@ -36,8 +31,8 @@ public class GameStringContainer {
 
     /**
      *
-     * @param key Is used for...
-     * @return Returning ...
+     * @param key Is used for choosing which string get in return.
+     * @return Returning the chosen string from one of the txt files under resources.
      */
     public String getString(String key) {
         return gameStrings.get(key);

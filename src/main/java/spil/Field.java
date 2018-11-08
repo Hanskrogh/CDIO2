@@ -14,9 +14,7 @@ public class Field {
      */
     public final String name;
     /**
-     * Defines the value of the field.
-     *
-     * <p> The Value of the field, is how much money the player is getting or how much money the player is losing.</p>
+     * Defines the value of the field. The Value of the field, is how much money the player is getting or how much money the player is losing.
      */
     public final int value;
     /**
