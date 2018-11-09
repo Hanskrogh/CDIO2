@@ -20,7 +20,7 @@ public class DiceCup {
      * This method is rolling the dices, while storing them in a list.
      * @return Is returning the list which is holding the dices value.
      */
-    public int[] castDices() {
+    public int[] castDice() {
         int[] cast = new int[dices.length];
 
         // We are here rolling the dices.
@@ -36,7 +36,7 @@ public class DiceCup {
      * This method is for seeing the total value of the 2 dices.
      * @return The value of both dices in a total sum.
      */
-    public int getFaceValue() {
+    public int getDiceSum() {
         int sum = 0;
         for (int i = 0; i < dices.length; i++) { sum += dices[i].getValue(); }
         return sum;

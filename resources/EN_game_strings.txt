@@ -19,6 +19,9 @@ Enter amount of players
 invalid_amount_players
 Invalid amount of players! Try again!
 
+error_invalid_face_value
+Program Fault: Invalid Face Value
+
 field_tower
 You have found the tower and the treasures inside it! You get 250!
 

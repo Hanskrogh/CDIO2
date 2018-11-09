@@ -19,6 +19,8 @@ Indtast antallet af spillere
 invalid_amount_players
 Ugyldigt antal spillere! Prøv igen!
 
+error_invalid_face_value
+Programfejl: Umuligt antal øjne
 
 field_tower
 Du har fundet tårne, og finder gamle skatte. Du får 250!
